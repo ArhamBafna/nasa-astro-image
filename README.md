@@ -10,7 +10,7 @@ A retro-styled web app to explore NASA's daily astronomy photos and cosmic video
 
 ## Quick Start
 
-Open the **[live site](https://arhambafna.github.io/nasa-astro-image/)** in your browser — no setup required!
+Open the live site above. No setup needed
 
 ## Features
 

@@ -25,25 +25,27 @@ function fetchPicture(date = '') {
         return
       }
 
-      let mediaElement = ''
-      if (data.media_type === 'video') {
-        mediaElement = `<iframe class="apod-media" src="${data.url}" allowfullscreen></iframe>`
+      let media = ''
+      if (data.media_type === 'image') {
+        media = `<img class="apod-media" src="${data.url}" alt="${data.title}" />`
+      } else if (data.url.includes('youtube') || data.url.includes('youtu.be')) {
+        media = `<iframe class="apod-media" src="${data.url}" allowfullscreen></iframe>`
       } else {
-        mediaElement = `<img class="apod-media" src="${data.url}" alt="${data.title}" />`
+        media = `<video class="apod-media" src="${data.url}" controls></video>`
       }
 
       app.innerHTML = `
         <h1 class="apod-title">${data.title}</h1>
         <p class="apod-date">${data.date}</p>
         <div class="media-container">
-          ${mediaElement}
+          ${media}
         </div>
         <p class="apod-explanation">${data.explanation}</p>
       `
     })
-    .catch((error) => {
-      console.error(error)
-      app.innerHTML = '<p class="error">Failed to fetch data from NASA API.</p>'
+    .catch((err) => {
+      console.error(err)
+      app.innerHTML = `<p class="error">Error: ${err.message || 'Failed to load astronomy picture'}</p>`
     })
 }
 

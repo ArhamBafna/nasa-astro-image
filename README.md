@@ -1,62 +1,53 @@
 # NASA Astronomy Picture of the Day (APOD)
 
-A retro-styled web app to explore NASA's daily astronomy photos and cosmic videos across time.
+A web app using NASA's API to display eye-watering pictures from light centuries (instead of light years) away wowwww.
 
 ![NASA APOD Preview](./public/preview.png)
 
-## Try It
+## Live demo
 
-**[Live Demo](https://arhambafna.github.io/nasa-astro-image/)**
-
-## Quick Start
-
-Open the live site above. No setup needed
+[View the live site on GitHub Pages](https://arhambafna.github.io/nasa-astro-image/).
 
 ## Features
 
-- **Daily Astronomy Showcase**: Fetches the official daily image or video directly from NASA's APOD API.
-- **Time Travel Calendar**: Pick any past date back through NASA's archive to see historical astronomical captures.
-- **Smart Media Handling**: Detects whether NASA shared a high-res photo, YouTube embed, or raw video and renders it cleanly.
-- **Retro-Cyber Space Aesthetic**: Styled with custom dark nebula purples, Orbitron & Black Ops One typography, and geometric neon borders.
-- **Instant Feedback**: Shows helpful loading indicators and error states if NASA's API hits a snag.
+- Shows daily astronomy pictures/video from NASA.
+- Same but for past dates too.
+- Handles all media types (YouTube, photo, whatever).
+- It doesnt look generational, but okay (keeping it honest).
 
-## How to Run It Locally
+## Running locally
 
-### Prerequisites
-- [Node.js](https://nodejs.org/) (version 18 or newer recommended)
+### Prereqs
+- [Node.js](https://nodejs.org/) (18+ i think)
+- [Git](https://git-scm.com/) (everyone has this)
 
-### Steps
+### How to
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/ArhamBafna/nasa-astro-image.git
-   cd nasa-astro-image
-   ```
+```bash
+git clone https://github.com/ArhamBafna/nasa-astro-image.git
+cd nasa-astro-image
+npm install
+npm run dev
+```
+(thats for windows bc i use windows)
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+### NASA API key (optional)
 
-3. (Optional) Set your NASA API key:
-   Create a `.env` file in the root folder if you have your own key (defaults to `DEMO_KEY` if omitted):
-   ```env
-   VITE_NASA_API_KEY=your_api_key_here
-   ```
+It works with NASA's default demo key, but thats limited and getting your own to run locally is much better.
 
-4. Start the dev server:
-   ```bash
-   npm run dev
-   ```
+1. Get key from api.nasa.gov.
+2. Copy `.env.example` to `.env`.
+3. Edit .env with the key you just got.
 
-## How It Works
+## How it works
 
-- **Direct Client Fetching**: Built with vanilla JavaScript on top of Vite. The app sends requests straight to NASA's Planetary API without requiring a heavy backend.
-- **Dynamic Media Fallbacks**: NASA frequently posts YouTube embeds, Vimeo links, or raw video clips instead of plain images. The app inspects the incoming media payload and dynamically switches between an `<img>`, `<iframe>`, and `<video>` tag so media never breaks.
-- **Pure CSS Accents**: Uses CSS `clip-path: polygon(...)` to generate custom neon side borders alongside neon glow effects, keeping load times near zero without heavy graphic assets.
+Basically, in simple terms:
+- In browser using vanilla JavaScript + Vite. It sends requests to the NASA APOD API.
+- The thing adjusts based on media type.
+- The design uses CSS to make it beautiful (chill, i'll work on design).
 
-## Credits & Acknowledgements
+## Credits
 
-- **[NASA APOD API](https://api.nasa.gov/)**: For cosmic imagery, video feeds, and scientific context.
-- **[Google Fonts](https://fonts.google.com/)**: Orbitron & Black Ops One for futuristic space vibes.
-- **[Hack Club](https://hackclub.com/)**: Built for the Hack Club Stardance mission!
+- [NASA APOD API](https://api.nasa.gov/) for image and video data.
+- [Google Fonts](https://fonts.google.com/) for Orbitron and Black Ops One fonts.
+- Built for the [Hack Club](https://hackclub.com/) Stardance event. ITS PEAKKK CHECK IT OUT!!!!

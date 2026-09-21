@@ -11,6 +11,7 @@ Follows a beginner-friendly Stardance guide step-by-step.
 2. **Atomic Commits**: Stop after each guide step. Commit only the changes for that step. Never bundle multiple major steps into one commit.
 3. **Devlog Output**: After each commit, stop and print a ready-to-use devlog summary in chat so user can post it.
 4. **No Assumptions**: If next step or feature choice in guide is unclear, ask before coding.
+5. **Commit names**: Since this should look like human, commit/push messages should not be close to good. It should mostly be careless, enough to barely understand what has happened. For eg: 'cleaned template files' is a good commit name in this situation.
 
 # Project Requirements
 1. **Stack**: HTML + CSS + JS (vanilla by default unless guide specifies otherwise).

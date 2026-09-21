@@ -2,7 +2,7 @@
 
 A retro-styled web app to explore NASA's daily astronomy photos and cosmic videos across time.
 
-![NASA APOD Preview](https://raw.githubusercontent.com/ArhamBafna/nasa-astro-image/main/public/preview.png)
+![NASA APOD Preview](./public/preview.png)
 
 ## Try It
 
